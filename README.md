@@ -21,4 +21,8 @@ $ mvn quarkus:dev
 
 To run demo on Azure App Service
 -----------
-TBD
+. Create App Service w/Postgres and Insights
+. Enable networking connectivity from Azure services to Postgres
+. add `QUARKUS_HTTP_PORT=80` to Configuration
+. Configure GitHub Action
+. Enable App Insights
