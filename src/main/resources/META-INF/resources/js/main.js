@@ -204,7 +204,7 @@ function clearScores() {
     let xhr = new XMLHttpRequest();
     xhr.open('DELETE', '/api/scoreboard');
     xhr.onload = function () {
-      if (xhr.status === 204) {
+      if (xhr.status === 204 || xhr.status === 200) {
         location.reload();
       }
       else {
@@ -380,21 +380,21 @@ function runCodeForAllCells(cb) {
 }
 
 function altRows(id){
-  if(document.getElementsByTagName){  
-      
-      var table = document.getElementById(id);  
-      var rows = table.getElementsByTagName("tr"); 
+  if(document.getElementsByTagName){
+
+      var table = document.getElementById(id);
+      var rows = table.getElementsByTagName("tr");
       console.log("table: " + table, " length: " + rows.length);
-       
-      for(i = 0; i < rows.length; i++){  
+
+      for(i = 0; i < rows.length; i++){
           var cn;
 
           if(i % 2 == 0){
               rows[i].className += (cn = " evenrowcolor");
           }else{
               rows[i].className += (cn = " oddrowcolor");
-          }   
-          
+          }
+
           var datas = rows[i].getElementsByTagName("td");
           for (j = 0; j < datas.length; j++) {
             datas[j].className += cn;

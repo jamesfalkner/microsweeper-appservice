@@ -2,9 +2,6 @@ package com.redhat.developers.microsweeper;
 
 import com.redhat.developers.microsweeper.model.Score;
 import com.redhat.developers.microsweeper.service.ScoreboardService;
-import org.jboss.resteasy.reactive.RestResponse;
-import org.jboss.resteasy.reactive.RestResponse.ResponseBuilder;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,9 +32,8 @@ public class ScoreboardResource {
     }
 
     @DELETE
-    public RestResponse<Void> clearAll() {
-        scoreboardService.clearScores();
-        return ResponseBuilder.noContent().build();
+    public Uni<Long> clearAll() {
+        return scoreboardService.clearScores();
     }
 
 }
