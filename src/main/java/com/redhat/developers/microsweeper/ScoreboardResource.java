@@ -27,7 +27,6 @@ public class ScoreboardResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-
     public Uni<Void> addScore(Score score) throws Exception {
         return scoreboardService.addScore(score);
     }
