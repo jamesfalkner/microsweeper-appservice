@@ -2,6 +2,7 @@ package com.redhat.developers.microsweeper.service;
 
 import com.redhat.developers.microsweeper.model.Score;
 
+import io.micrometer.core.annotation.Timed;
 import io.quarkus.hibernate.reactive.panache.common.runtime.ReactiveTransactional;
 import io.smallrye.mutiny.Uni;
 
@@ -16,6 +17,7 @@ public class ScoreboardService  {
     }
 
     @ReactiveTransactional
+    @Timed(description = "How log to add a score", value = "scoreboard-timer")
     public Uni<Void> addScore(Score score) {
         return Score.persist(score);
     }
