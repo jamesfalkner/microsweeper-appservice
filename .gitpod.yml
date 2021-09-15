@@ -11,5 +11,7 @@ vscode:
     - redhat.mta-vscode-extension
     - redhat.vscode-quarkus
 tasks:
+  - name: Add Quarkus CLI completion to shell
+    before: source <(quarkus completion)
   - name: Pre-warm Maven
     init: mvn -fn dependency:resolve-plugins dependency:resolve dependency:go-offline clean compile package
