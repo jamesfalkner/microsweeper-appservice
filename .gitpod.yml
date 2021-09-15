@@ -1,0 +1,11 @@
+image:
+  file: .gitpod.Dockerfile
+ports:
+  - port: 8080
+    onOpen: open-preview
+vscode:
+  extensions:
+    - redhat.mta-vscode-extension
+tasks:
+  - name: Pre-warm Maven
+    init: mvn -fn dependency:resolve-plugins dependency:resolve dependency:go-offline clean compile package
