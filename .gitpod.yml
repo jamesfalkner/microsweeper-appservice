@@ -8,8 +8,8 @@ ports:
 
 vscode:
   extensions:
-    - redhat.mta-vscode-extension
-    - redhat.vscode-quarkus@0.0.79
+    - redhat.mta-vscode-extension@0.0.79
+    - redhat.vscode-quarkus
 tasks:
   - name: Add Quarkus CLI completion to shell
     before: source <(quarkus completion)
