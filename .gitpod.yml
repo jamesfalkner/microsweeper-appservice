@@ -9,6 +9,7 @@ ports:
 vscode:
   extensions:
     - redhat.mta-vscode-extension
+    - redhat.vscode-quarkus
 tasks:
   - name: Pre-warm Maven
     init: mvn -fn dependency:resolve-plugins dependency:resolve dependency:go-offline clean compile package
