@@ -1,5 +1,5 @@
 Red Hat Microsweeper demo on Azure App Service
-=========================
+==========================
 
 This demo uses a number of cloud technologies to implement a simple game from the earlier days of computing: Minesweeper!
 
